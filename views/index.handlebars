@@ -1,0 +1,31 @@
+
+<div class="row text-center">
+<div class="col-md-6 col-sm-6">
+<ol id="burgers-list">
+	{{#each burgers}}
+		<form method="POST" action="/{{this.burger_name}}?_method=PUT">
+		<li>{{this.burger_name}}</li>
+		<button type="submit" >devour it!</button>
+		</form>
+
+	{{/each}}
+</ol>
+</div>	
+<div class="col-md-6 col-sm-6">
+<ul id="dev-burgers-list">
+	{{#each devBurgers}}
+		<form method='POST' action="/{{this.burger_name}}?_method=DELETE">
+		<li><button type="submit" class="btn btn-primary">{{this.burger_name}}</button></li>
+		</form>
+	{{/each}}
+</ul>	
+</div>
+</div>
+<div class="text-center">
+	<form method="POST" action="/">
+	<input type="text" name="burgerName" id="burgerName">
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<h4>Enter a burger to you want to eat and then click the "Submit" button.</h4>
+</div>
+
